@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="MainActivity"
+    android:padding="1dp"
+    android:id="@+id/main_container">
+
+
+        <EditText
+            android:id="@+id/dictionarySearch"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="80dp"
+        android:paddingStart="5dp"
+        android:background="@drawable/search"
+        android:drawableRight="@android:drawable/ic_menu_search"
+        android:paddingLeft="10dp" android:clickable="true"
+            android:imeOptions="actionDone"
+            />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="130dp"
+        android:id="@+id/submitButton"/>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_plus"
+        android:layout_width="match_parent"
+        android:layout_height="255dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="200dp"
+        app:cardBackgroundColor="#ffffff"
+        app:contentPadding="5dp"
+        app:cardElevation="1dp"
+        android:background="@drawable/card_background">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/wordView"
+            android:textColor="#808080"
+            android:background="@drawable/card_background"
+            android:text="Eloquent"
+            android:textSize="25sp"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/definition"
+            android:gravity="center"
+            android:id="@+id/definition"/>
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

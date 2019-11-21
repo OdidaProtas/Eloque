@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Eloque</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="definition">Eloquence is fluent, forcible, elegant or persuasive speaking. It is primarily the power of expressing strong emotions in striking and appropriate language, thereby producing conviction or persuasion. The term is also used for writing in a fluent style</string>
+</resources>
