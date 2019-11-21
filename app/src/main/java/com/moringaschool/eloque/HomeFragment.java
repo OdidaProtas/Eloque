@@ -28,6 +28,19 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.fragment_home, container, false);
         FloatingActionButton addProject = view.findViewById(R.id.addProject);
+        FloatingActionButton viewProfile = view.findViewById(R.id.viewProfile);
+
+
+
+
+        viewProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
         addProject.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
