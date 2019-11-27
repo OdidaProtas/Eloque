@@ -37,17 +37,18 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/card_plus"
         android:layout_width="match_parent"
-        android:layout_height="255dp"
+        android:layout_height="365dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="180dp"
         app:cardBackgroundColor="#ffffff"
         app:contentPadding="5dp"
         app:cardElevation="1dp"
         android:background="@drawable/card_background">
 
+
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:id="@+id/wordView"
@@ -57,13 +58,51 @@
             android:textSize="25sp"
             android:padding="5dp"
             android:textStyle="bold"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginTop="5dp"
+            android:textAlignment="center"/>
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:text="adjective"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:id="@+id/type"
+            android:layout_marginTop="75dp"
+            android:textStyle="italic"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="/ˈɛləkwənt/"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:id="@+id/typePhonetic"
+            android:layout_marginTop="50dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/definition"
             android:gravity="center"
-            android:id="@+id/definition"/>
+            android:id="@+id/definition"
+            android:layout_marginTop="117dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="'an eloquent speech'"
+            android:gravity="center"
+            android:id="@+id/example"
+            android:layout_marginTop="205dp"
+            android:textStyle="italic"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="late Middle English: via Old French from Latin eloquent-‘speaking out’, from the verb eloqui (see eloquence)"
+            android:gravity="center"
+            android:id="@+id/entymologies"
+            android:layout_marginTop="255dp"
+            android:textStyle="italic"
+            android:textSize="10dp"/>
 
     </androidx.cardview.widget.CardView>
 

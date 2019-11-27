@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProjectsFormActivity"
+    android:background="#cdcdcd">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/contactsInfo"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Fill All Fields"
+            android:layout_gravity="center_horizontal"
+            android:textSize="25sp"
+            android:padding="5dp"
+            android:background="@drawable/card_background"
+            android:layout_marginLeft="10dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="Project Title"
+            app:endIconContentDescription="edit"
+            app:endIconDrawable="@drawable/edit"
+            app:endIconMode="custom">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/projectNameEditText"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/categoryRadioGroup">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Category"
+                android:textSize="17sp"/>
+
+
+            <RadioButton
+                android:id="@+id/radio_Article"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Article" />
+
+            <RadioButton
+                android:id="@+id/radio_Academic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Academic"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/radio_research"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Research" />
+
+            <RadioButton
+                android:id="@+id/radio_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Image" />
+            <RadioButton
+                android:id="@+id/radio_wordpress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wordpress" />
+        </RadioGroup>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/custom_end_icon3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="50dp"
+            android:hint="Description"
+            app:endIconContentDescription="edit"
+            app:endIconDrawable="@drawable/edit"
+            app:endIconMode="custom">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/descriptionEditText"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="40dp"
+            android:id="@+id/levelRadioGroup">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Minimum Level"
+                android:textSize="17sp"/>
+
+
+            <RadioButton
+                android:id="@+id/radio_beginner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Beginner" />
+
+            <RadioButton
+                android:id="@+id/radio_intermediate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Intermediate" />
+
+            <RadioButton
+                android:id="@+id/radio_pro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pro"
+                android:checked="true"/>
+        </RadioGroup>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/custom_end_requirements"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="50dp"
+            android:hint="Requirements"
+            app:endIconContentDescription="edit"
+            app:endIconDrawable="@drawable/edit"
+            app:endIconMode="custom">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/requirementsEditText"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/custom_end_icon4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="Offer in KES"
+            app:endIconContentDescription="edit"
+            app:endIconDrawable="@drawable/edit"
+            app:endIconMode="custom">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/offerInKesEditText"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/submitProject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:foregroundTint="@color/colorPrimary"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/colorPrimary"
+            android:textColor="#ffffff"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"/>
+
+
+    </LinearLayout>
+</ScrollView>
+
+</RelativeLayout>

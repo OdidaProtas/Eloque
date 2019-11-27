@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/minimumLevel"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/card_background"
+                android:padding="3dp"
+                android:text="Beginner"
+                android:textAlignment="center"
+                android:textSize="10dp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="12dp"
+                android:background="@android:color/darker_gray" />
+
+            <View
+                android:layout_width="7dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/gradient_purple"/>
+
+
+
+        </FrameLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/projectNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Project Name"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:gravity="bottom"
+                android:text="Academic" />
+
+            <TextView
+                android:id="@+id/projecOwner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="By: Brian Odida"
+                android:textSize="10dp"
+                android:textStyle="italic" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="10dp">
+
+
+        <TextView
+            android:id="@+id/projectPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="35dp"
+            android:text="Kes: 300"
+            android:textColor="#00FF00"
+            android:textSize="15sp" />
+
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginRight="18dp"
+        android:background="@android:color/darker_gray" />
+
+
+</RelativeLayout>
