@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:orientation="vertical"
+    android:id="@+id/baseLayout"
+    android:background="#ffffff">
+
+    <TextView
+        android:text="Add a Short Description about you?"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/DescriptionLabel"
+        android:textColor="@color/colorPrimaryDark"
+        android:typeface="monospace"
+        android:textStyle="normal|bold"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:padding="10dp" />
+
+    <com.github.florent37.materialtextfield.MaterialTextField
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mtf_labelColor="#666"
+        app:mtf_image="@drawable/edit"
+        android:layout_marginTop = "40dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:id="@+id/AmountEditText"
+            android:layout_height="wrap_content"
+            android:hint="Amount"
+            android:textColor="#333"
+            android:textSize="15sp" />
+
+    </com.github.florent37.materialtextfield.MaterialTextField>
+
+    <com.github.florent37.materialtextfield.MaterialTextField
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mtf_labelColor="#666"
+        app:mtf_image="@drawable/edit"
+        android:layout_marginTop = "40dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:id="@+id/PhoneEditText"
+            android:layout_height="wrap_content"
+            android:hint="Phone"
+            android:textColor="#333"
+            android:textSize="15sp" />
+
+    </com.github.florent37.materialtextfield.MaterialTextField>
+
+        <Button
+            android:text="Submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/submitButton"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"/>
+
+        <Button
+            android:text="cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cancelButton"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"/>
+
+</LinearLayout>

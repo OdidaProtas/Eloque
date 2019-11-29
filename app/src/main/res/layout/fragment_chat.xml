@@ -31,12 +31,52 @@
         android:text="Invite contacts?"
         android:textSize="15sp"
         android:layout_marginTop="20dp"
-        android:textAllCaps="false"/>
+        android:textAllCaps="false"
+        android:visibility="gone"/>
 
    <ListView
     android:id="@+id/lstContacts"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-       android:layout_marginTop="65dp"/>
+       android:layout_marginTop="65dp"
+       android:visibility="gone"/>
+
+    <ListView
+        android:id="@+id/listMessages"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="65dp"
+        android:layout_above="@id/chat_input"
+        android:divider="@android:color/transparent"/>
+
+
+    <EditText
+        android:id="@+id/chat_input"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/card_background"
+        android:padding="10dp"
+        android:hint="Start typing..."
+        android:layout_marginBottom="65dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@color/colorPrimary"
+        android:textSize="20sp"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="5dp"
+        android:paddingBottom="10dp"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="350dp"
+        android:background="#ffffff"
+        android:src="@drawable/sent"
+        android:tint="@color/colorPrimary"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="65dp"
+        android:paddingBottom="10dp"
+        android:onClick="sendMessage"/>
+
 
 </FrameLayout>

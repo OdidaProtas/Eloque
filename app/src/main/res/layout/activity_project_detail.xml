@@ -1,9 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProjectDetailActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/detailLevel"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:textAlignment="center"
+                android:background="@drawable/card_background"
+                android:padding="3dp"
+                android:text="Beginner"
+                android:textSize="10dp"
+                android:layout_marginTop="20dp"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="12dp"
+                android:background="@android:color/darker_gray" />
+
+            <View
+                android:layout_width="7dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/gradient_purple"/>
+
+
+
+        </FrameLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/detailCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:gravity="bottom"
+                android:text="Academic" />
+
+            <TextView
+                android:id="@+id/detailProjectOwner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="By: Brian Odida"
+                android:textSize="10dp"
+                android:textStyle="italic"/>
+
+            <TextView
+                android:id="@+id/detailProjectOwnerEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="By: Brian Odida"
+                android:textSize="10dp"
+                android:textStyle="italic"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="10dp">
+
+
+        <TextView
+            android:id="@+id/detailProjectPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="35dp"
+            android:text="Kes: 300"
+            android:textColor="#00FF00"
+            android:textSize="15sp" />
+
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginRight="18dp"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/card_background"
+        android:padding="5dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/descriptionView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/definition"
+        android:layout_marginTop="150dp"
+        android:padding="5dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Requirements"
+        android:layout_marginTop="300dp"
+        android:background="@drawable/card_background"
+        android:padding="5dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/requirementsView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/definition"
+        android:layout_marginTop="350dp"
+        android:padding="5dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="15sp"/>
+    <Button
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="460dp"
+        android:layout_centerHorizontal="true"
+        android:text="save"
+        android:background="@color/colorPrimary"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Attempt Project"
+        android:background="@color/colorPrimary"
+        android:id="@+id/attemptProject"/>
+
+
+</RelativeLayout>

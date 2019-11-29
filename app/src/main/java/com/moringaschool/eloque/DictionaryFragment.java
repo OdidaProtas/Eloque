@@ -34,6 +34,10 @@ public class DictionaryFragment extends Fragment{
     public static OxfordApiClient apiManager;
     private TextView searchedWord;
     private OkHttpClient okHttpClient;
+    private TextView pronunciation;
+    private TextView example;
+    private TextView type;
+    private TextView entymology;
 
 
     public DictionaryFragment() {
@@ -49,6 +53,10 @@ public class DictionaryFragment extends Fragment{
         final EditText searchView =  view.findViewById(R.id.dictionarySearch);
         Button submitButton = view.findViewById(R.id.submitButton);
         final TextView definitionView = view.findViewById(R.id.definition);
+        type = view.findViewById(R.id.type);
+        pronunciation = view.findViewById(R.id.typePhonetic);
+        example = view.findViewById(R.id.example);
+        entymology = view.findViewById(R.id.entymologies);
 
 
        submitButton.setOnClickListener(new View.OnClickListener() {
@@ -71,7 +79,15 @@ public class DictionaryFragment extends Fragment{
                            searchedWord.setText(dictionaryResult.getWord());
                            String definition = body.getResults().get(0).getLexicalEntries().get(0).getEntries().get(0).getSenses().get(0).getDefinitions().get(0);
                            definitionView.setText(definition);
-                           Toast.makeText(getContext(), word + "definition has been found", Toast.LENGTH_LONG).show();
+                           String exampleResult = body.getResults().get(0).getLexicalEntries().get(0).getEntries().get(0).getSenses().get(0).getExamples().get(0).getText();
+                           example.setText("'" + exampleResult + "'");
+                           String textType = body.getResults().get(0).getLexicalEntries().get(0).getLexicalCategory().getText();
+                           type.setText(textType);
+                           String pronunciationText = body.getResults().get(0).getLexicalEntries().get(0).getPronunciations().get(0).getPhoneticSpelling();
+                           pronunciation.setText("/"+ pronunciationText +"/");
+                           String entymologyRsult = body.getResults().get(0).getLexicalEntries().get(0).getEntries().get(0).getEtymologies().get(0);
+                           entymology.setText(entymologyRsult);
+                           Toast.makeText(getContext(), word + " definition has been found", Toast.LENGTH_LONG).show();
                        }switch (response.code()) {
                            case 403:
                                try {

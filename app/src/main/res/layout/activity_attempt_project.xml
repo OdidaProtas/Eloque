@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AttemptProjectActivity">
+
+
+    <TextView
+        android:id="@+id/infoInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:text="Upload A document on Completion"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/card_background"
+        android:padding="5dp"
+        android:text="Requirements"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/requirementsAttempt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginRight="10dp"
+        android:text="@string/definition" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="350dp"
+        android:background="@drawable/card_background"
+        android:padding="5dp"
+        android:text="Contact Owner" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginRight="10dp"
+        android:padding="3dp"
+        android:text="View the Chat tab under connections and send the owner a message" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="440dp"
+        android:padding="3dp"
+        android:text="bryodiiiddah@gmail.com"
+        android:textStyle="italic" />
+
+    <ProgressBar
+        android:id="@+id/uploadProgressView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:indeterminateTint="@color/colorPrimary"
+        android:progressTint="@color/colorPrimary"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btnUPload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:text="Submit" />
+
+    <ImageButton
+        android:id="@+id/btnChoose"
+        android:layout_width="150dp"
+        android:layout_height="65dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="490dp"
+        android:adjustViewBounds="true"
+        android:background="@color/colorPrimary"
+        android:padding="100dp"
+        android:scaleType="centerCrop"
+        android:scaleY="-1"
+        android:tint="#ffffff"
+        app:srcCompat="@drawable/up" />
+
+
+</RelativeLayout>

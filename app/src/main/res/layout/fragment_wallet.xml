@@ -1,118 +1,250 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="1dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="MainActivity"
-    tools:showIn="@layout/activity_main"
-    android:padding="1dp"
-    android:id="@+id/main_container">
+    tools:showIn="@layout/activity_main">
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Your Balance"
-        android:layout_marginLeft="20dp"
-        android:textSize="25sp"
-        android:layout_marginTop="10dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="1,300"
-        android:layout_marginLeft="20dp"
-        android:textSize="60dp"
-        android:textStyle="bold"
-        android:layout_marginTop="40dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="KES"
-        android:layout_marginLeft="190dp"
-        android:textSize="20dp"
-        android:layout_marginTop="80dp"/>
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="155dp">
+        android:layout_height="match_parent">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_ChashOut"
-            android:layout_gravity="center"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginLeft="33dp"
-            app:contentPaddingTop="20dp"
-            app:cardElevation="1dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
 
-            <ImageView
-                android:id="@+id/imageCompleted"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                app:srcCompat="@drawable/withdraw"
-                android:layout_alignParentRight="true"
-                android:layout_gravity="center"
-                android:clickable="true"
-                android:focusable="true"
-                android:tint="#FF7F50"/>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Your Balance"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="40dp"
+                    android:text="1,300"
+                    android:textSize="60dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="190dp"
+                    android:layout_marginTop="80dp"
+                    android:text="KES"
+                    android:textSize="20dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="155dp"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="20dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_ChashOut"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="33dp"
+                        app:cardElevation="1dp"
+                        app:contentPaddingTop="20dp">
+
+
+                        <ImageView
+                            android:id="@+id/imageCompleted"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="center"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:tint="#FF7F50"
+                            app:srcCompat="@drawable/withdraw" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="bottom"
+                            android:text="Withdraw"
+                            android:textAlignment="gravity" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_Deposit"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="18dp"
+                        app:cardElevation="1dp"
+                        app:contentPaddingTop="20dp">
+
+
+                        <ImageView
+                            android:id="@+id/imageDeposit"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="center"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:tint="#20B2AA"
+                            app:srcCompat="@drawable/deposit" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="bottom"
+                            android:text="Deposit"
+                            android:textAlignment="gravity" />
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="345dp"
+                    android:background="@drawable/card_background"
+                    android:padding="5dp"
+                    android:text="Activities"
+                    android:textSize="20sp" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="gravity"
-                android:layout_gravity="center_horizontal"
-                android:gravity="bottom"
-                android:text="Withdraw"/>
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_Deposit"
-            android:layout_gravity="center"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginLeft="18dp"
-            app:contentPaddingTop="20dp"
-            app:cardElevation="1dp">
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
 
 
-            <ImageView
-                android:id="@+id/imageDeposit"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                app:srcCompat="@drawable/deposit"
-                android:layout_alignParentRight="true"
-                android:layout_gravity="center"
-                android:clickable="true"
-                android:focusable="true"
-                android:tint="#20B2AA"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAlignment="gravity"
-                android:layout_gravity="center_horizontal"
-                android:gravity="bottom"
-                android:text="Deposit"/>
+                    <TextView
+                        android:id="@+id/transactionType"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/card_background"
+                        android:padding="3dp"
+                        android:text="Deposit"
+                        android:textAlignment="center"
+                        android:textSize="10dp" />
 
-        </androidx.cardview.widget.CardView>
+                </FrameLayout>
 
-    </LinearLayout>
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Activities"
-        android:layout_marginLeft="20dp"
-        android:textSize="20sp"
-        android:layout_marginTop="345dp"
-        android:background="@drawable/card_background"
-        android:padding="5dp"/>
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="19dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@android:color/darker_gray" />
+
+                    <View
+                        android:layout_width="7dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/gradient_purple"/>
+
+                </FrameLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/projectNameTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="ID: 77y7bcb"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/category"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="bottom"
+                        android:text="12/11/2019" />
+
+                    <TextView
+                        android:id="@+id/projecOwner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="successful"
+                        android:textSize="10dp"
+                        android:textStyle="italic" />
+
+
+                </LinearLayout>
+
+
+                <FrameLayout
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginTop="20dp">
+
+
+                    <TextView
+                        android:id="@+id/projectPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Kes: 1300"
+                        android:textColor="#2E8B57"
+                        android:textSize="15sp" />
+
+                </FrameLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

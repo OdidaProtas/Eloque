@@ -20,10 +20,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
-    final Fragment fragment1 = new HomeFragment();
-    final Fragment fragment2 = new DictionaryFragment();
-    final Fragment fragment3 = new WalletFragment();
-    final Fragment fragment4 = new ChatFragment();
     final FragmentManager fm = getSupportFragmentManager();
     FragmentTransaction ft = fm.beginTransaction();
 
@@ -82,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
                         bar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
                         bar.setCustomView(tv);
                     }
+
                     loadFragment(fragment);
                     return true;
 

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "419092118700",
+    "firebase_url": "https://eloque-1b44b.firebaseio.com",
+    "project_id": "eloque-1b44b",
+    "storage_bucket": "eloque-1b44b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419092118700:android:2e6bf4c4ed3498341ff309",
+        "android_client_info": {
+          "package_name": "com.moringaschool.eloque"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "419092118700-kkf5uriv4369rnp48sesi7o0m47rgi3c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.moringaschool.eloque",
+            "certificate_hash": "34a5e592b865d7a2f1844813d32615acdc9a15bd"
+          }
+        },
+        {
+          "client_id": "419092118700-qds2vrfhkb12ou6lbegq2s7uq2lj57su.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhACQng1IDMUcmCQhbl1rrpB27w25n2fU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "419092118700-qds2vrfhkb12ou6lbegq2s7uq2lj57su.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
