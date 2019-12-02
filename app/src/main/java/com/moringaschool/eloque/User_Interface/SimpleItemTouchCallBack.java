@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.moringaschool.eloque.interfaces.ItemTouchHelperAdapter;
+import com.moringaschool.eloque.interfaces.ItemTouchHelperViewHolder;
 
 public class SimpleItemTouchCallBack  extends ItemTouchHelper.Callback {
     private final ItemTouchHelperAdapter mAdapter;
@@ -43,4 +44,33 @@ public class SimpleItemTouchCallBack  extends ItemTouchHelper.Callback {
     public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
         mAdapter.onItemDismiss(viewHolder.getAdapterPosition());
     }
+
+    //   The method below triggers the callback in ItemTouchHelperViewHolder which is then sent to our
+    //  RestaurantListViewHolder where we will later add animations.7
+    @Override
+    public void onSelectedChanged(RecyclerView.ViewHolder viewHolder, int actionState){
+
+        //  This conditional ensures we only change appearance of active items:
+        if (actionState != ItemTouchHelper.ACTION_STATE_IDLE){
+            if (viewHolder instanceof ItemTouchHelperViewHolder){
+                //  This tells the viewHolder that an item is being moved or dragged:
+                ItemTouchHelperViewHolder itemTouchHelperViewHolder = (ItemTouchHelperViewHolder) viewHolder;
+                itemTouchHelperViewHolder.onItemSelected();
+            }
+        }
+        super.onSelectedChanged(viewHolder, actionState);
+    }
+    //  This triggers the callback in the ItemTouchHelperViewHolder which will be sent to our RestaurantListViewHolder.
+    //  Then, in the clearView override in RestaurantListViewHolder, we will remove the animations attached
+    //   to 'selected' items, since this item will no longer be actively selected.
+
+    @Override
+    public void clearView(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder){
+        super.clearView(recyclerView, viewHolder);
+        if (viewHolder instanceof  ItemTouchHelperViewHolder){
+            ItemTouchHelperViewHolder itemTouchHelperViewHolder = (ItemTouchHelperViewHolder) viewHolder;
+            itemTouchHelperViewHolder.onItemClear();
+        }
+    }
+
 }

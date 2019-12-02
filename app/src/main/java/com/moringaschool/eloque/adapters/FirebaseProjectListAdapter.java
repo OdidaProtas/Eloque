@@ -83,6 +83,8 @@ public class FirebaseProjectListAdapter extends FirebaseRecyclerAdapter<Projects
                 return false;
             }
         });
+
+
     }
 
     @NonNull

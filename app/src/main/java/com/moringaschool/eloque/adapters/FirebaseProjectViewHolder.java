@@ -1,7 +1,10 @@
 package com.moringaschool.eloque.adapters;
 
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorSet;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,6 +19,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.moringaschool.eloque.interfaces.ItemTouchHelperViewHolder;
 import com.moringaschool.eloque.models.Constants;
 import com.moringaschool.eloque.R;
 import com.moringaschool.eloque.User_Interface.ProjectDetailActivity;
@@ -26,7 +30,7 @@ import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
-public class FirebaseProjectViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+public class FirebaseProjectViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, ItemTouchHelperViewHolder {
 
     View mView;
     Context mContext;
@@ -34,14 +38,14 @@ public class FirebaseProjectViewHolder extends RecyclerView.ViewHolder implement
 
     public ImageView mRestaurantImageView;
 
-    public FirebaseProjectViewHolder(View itemView){
+    public FirebaseProjectViewHolder(View itemView) {
         super(itemView);
         mView = itemView;
         mContext = itemView.getContext();
         itemView.setOnClickListener(this);
     }
 
-    public void bindProjects(Projects project){
+    public void bindProjects(Projects project) {
 
         TextView projectNameTextView = mView.findViewById(R.id.projectNameTextView);
         TextView categoryTextView = mView.findViewById(R.id.category);
@@ -56,7 +60,7 @@ public class FirebaseProjectViewHolder extends RecyclerView.ViewHolder implement
         categoryTextView.setText(project.getCategory());
         projectOwner.setText(project.getPostedBy());
         minimumLevel.setText(project.getLevel());
-        projectPrice.setText("Kes: "+ project.getOfferInKes());
+        projectPrice.setText("Kes: " + project.getOfferInKes());
 
     }
 
@@ -70,13 +74,13 @@ public class FirebaseProjectViewHolder extends RecyclerView.ViewHolder implement
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     projects.add(snapshot.getValue(Projects.class));
                 }
 
                 int itemPosition = getLayoutPosition();
                 Intent intent = new Intent(mContext, ProjectDetailActivity.class);
-                intent.putExtra("position", itemPosition +"");
+                intent.putExtra("position", itemPosition + "");
                 intent.putExtra("projects", Parcels.wrap(projects));
                 mContext.startActivity(intent);
             }
@@ -87,6 +91,23 @@ public class FirebaseProjectViewHolder extends RecyclerView.ViewHolder implement
             }
         });
 
+
+    }
+
+    @Override
+    public void onItemSelected() {
+        Log.d("Animation", "onItemSelected");
+        AnimatorSet set = (AnimatorSet) AnimatorInflater.loadAnimator(mContext, R.animator.drag_scale_on);
+        set.setTarget(itemView);
+        set.start();
+    }
+
+    @Override
+    public void onItemClear() {
+        Log.d("Animation", "onItemClear");
+        AnimatorSet set = (AnimatorSet) AnimatorInflater.loadAnimator(mContext,R.animator.drag_scale_off);
+        set.setTarget(itemView);
+        set.start();
 
     }
 }
