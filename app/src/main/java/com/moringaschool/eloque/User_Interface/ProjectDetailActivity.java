@@ -8,10 +8,15 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.moringaschool.eloque.models.Projects;
 
 import org.parceler.Parcels;
@@ -28,6 +33,12 @@ public class ProjectDetailActivity extends AppCompatActivity {
     private TextView requiremsnts;
     private TextView email;
     private Button attemptProject;
+    private Button saveButton;
+
+    private FirebaseUser user;
+    private FirebaseAuth mAuth;
+    private DatabaseReference mNewProjectReference;
+    private FirebaseDatabase mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +53,19 @@ public class ProjectDetailActivity extends AppCompatActivity {
         requiremsnts = findViewById(R.id.requirementsView);
         email =findViewById(R.id.detailProjectOwnerEmail);
         attemptProject = findViewById(R.id.attemptProject);
+        saveButton = findViewById(R.id.save);
+
 
         projects = Parcels.unwrap(getIntent().getParcelableExtra("projects"));
         int index = Integer.parseInt(getIntent().getStringExtra("position"));
         final Projects project = projects.get(index);
+
+
+        mAuth = FirebaseAuth.getInstance();
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        mDatabase = FirebaseDatabase.getInstance();
+        mNewProjectReference = mDatabase.getReference();
+
 
         projectLevel.setText(project.getLevel());
         category.setText(project.getCategory());
@@ -64,6 +84,17 @@ public class ProjectDetailActivity extends AppCompatActivity {
             }
         });
 
+         saveButton.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 String uid = user.getUid();
+                 mNewProjectReference = mDatabase.getReference(Constants.FIREBASE_CHILD_ADDED_PROJECT).child("saved " + project.getCategory() + " "  + FirebaseAuth.getInstance().getUid());
+                 DatabaseReference pushRef = mNewProjectReference.push();
+                 pushRef.setValue(project);
+                 Toast.makeText(getApplicationContext(), "Project Saved, Will be visible under saved projects", Toast.LENGTH_LONG).show();
+
+             }
+         });
 
 
         ActionBar bar = getSupportActionBar();

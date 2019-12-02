@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:layout_marginLeft="20dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Skills"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:layout_gravity="center_horizontal"/>
+
+    <CheckBox
+        android:id="@+id/word"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Word"
+        android:textColor="@color/colorPrimary"
+        android:buttonTint="@color/colorPrimary"/>
+
+    <CheckBox
+        android:id="@+id/excel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Excel"
+        android:textColor="@color/colorPrimary"
+        android:buttonTint="@color/colorPrimary"/>
+
+    <CheckBox
+        android:id="@+id/research"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Research"
+        android:textColor="@color/colorPrimary"
+        android:buttonTint="@color/colorPrimary"/>
+
+    <CheckBox
+        android:id="@+id/academic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Academic"
+        android:textColor="@color/colorPrimary"
+        android:buttonTint="@color/colorPrimary"/>
+
+    <CheckBox
+        android:id="@+id/wordpress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WordPress"
+        android:textColor="@color/colorPrimary"
+        android:buttonTint="@color/colorPrimary"/>
+
+    <CheckBox
+        android:id="@+id/photoshop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Photoshop"
+        android:textColor="@color/colorPrimary"
+        android:buttonTint="@color/colorPrimary"/>
+
+    <CheckBox
+        android:id="@+id/reviews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Design"
+        android:textColor="@color/colorPrimary"
+        android:buttonTint="@color/colorPrimary"/>
+
+    <CheckBox
+        android:id="@+id/articles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Articles"
+        android:textColor="@color/colorPrimary"
+        android:buttonTint="@color/colorPrimary"
+        android:width="250dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/subitSkills"
+        android:background="#228B22	"
+        android:text="Submit"/>
+</LinearLayout>

@@ -15,6 +15,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.moringaschool.eloque.User_Interface.ProjectDetailActivity;
 import com.moringaschool.eloque.models.Projects;
 
 import org.parceler.Parcels;

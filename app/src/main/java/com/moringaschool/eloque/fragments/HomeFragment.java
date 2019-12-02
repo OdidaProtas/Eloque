@@ -11,6 +11,9 @@ import android.widget.ImageView;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.moringaschool.eloque.User_Interface.AddProjectActivity;
+import com.moringaschool.eloque.User_Interface.ProfileActivity;
 
 
 /**
@@ -57,7 +60,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), AddProjectActivity.class);
-                intent.putExtra("title", "Academic Projects");
+                intent.putExtra("title", "Projects");
                 intent.putExtra("category", "Academic");
                 startActivity(intent);
             }
@@ -109,7 +112,7 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), AddProjectActivity.class);
                 intent.putExtra("title", " Saved Academic Projects");
-                intent.putExtra("category", "Academic");
+                intent.putExtra("category", "saved Academic "  + FirebaseAuth.getInstance().getUid());
                 startActivity(intent);
             }
         });
@@ -119,7 +122,7 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), AddProjectActivity.class);
                 intent.putExtra("title", "Saved Research Projects");
-                intent.putExtra("category", "Research");
+                intent.putExtra("category", "saved Research "  + FirebaseAuth.getInstance().getUid());
                 startActivity(intent);
             }
         });
@@ -129,7 +132,7 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), AddProjectActivity.class);
                 intent.putExtra("title", "  Saved Articles Projects");
-                intent.putExtra("category", "Article");
+                intent.putExtra("category", "saved Article "  + FirebaseAuth.getInstance().getUid());
                 startActivity(intent);
             }
         });
@@ -139,7 +142,7 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), AddProjectActivity.class);
                 intent.putExtra("title", "Saved WordPress Projects");
-                intent.putExtra("category", "Wordpress");
+                intent.putExtra("category", "saved Wordpress "  + FirebaseAuth.getInstance().getUid());
                 startActivity(intent);
             }
         });
@@ -149,7 +152,7 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), AddProjectActivity.class);
                 intent.putExtra("title", "Saved Images Projects");
-                intent.putExtra("category", "Image");
+                intent.putExtra("category", "saved Image "  + FirebaseAuth.getInstance().getUid());
                 startActivity(intent);
             }
         });

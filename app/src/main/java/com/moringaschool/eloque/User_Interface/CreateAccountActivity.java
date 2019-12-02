@@ -24,6 +24,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class CreateAccountActivity extends AppCompatActivity implements View.OnClickListener {
     private Button mCreateUserButton;
@@ -217,6 +219,14 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
                         }
                     }
                 });
+        Users users = new Users(0, FirebaseAuth.getInstance().getUid());
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
+        DatabaseReference pushRef = reference.push();
+        pushRef.setValue(users);
+
+
     }
+
 
 }

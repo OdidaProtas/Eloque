@@ -4,111 +4,135 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity">
+    tools:context=".User_Interface.ProfileActivity">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/takePicture"
+        android:id="@+id/choosePicture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        app:srcCompat="@drawable/edit"
-        android:tint="@color/colorPrimary"
-        android:foregroundGravity="center_horizontal"
         android:layout_marginLeft="240dp"
         android:layout_marginTop="30dp"
-        android:elevation="0dp"/>
+        android:clickable="true"
+        android:elevation="0dp"
+        android:foregroundGravity="center_horizontal"
+        android:tint="@color/colorPrimary"
+        app:srcCompat="@drawable/edit" />
 
-    <ImageView
-        android:id="@+id/imageView"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/uploadPicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="240dp"
+        android:layout_marginTop="30dp"
+        android:clickable="true"
+        android:elevation="0dp"
+        android:foregroundGravity="center_horizontal"
+        android:tint="@color/colorPrimary"
+        android:visibility="gone"
+        app:srcCompat="@drawable/upload" />
+
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profileImageView"
         android:layout_width="135dp"
         android:layout_height="142dp"
-        app:srcCompat="@drawable/menu"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="30dp"
+        android:src="@drawable/menu"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp" />
 
     <TextView
         android:id="@+id/textViewName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Brian Odida"
-        android:textSize="20sp"
-        android:layout_marginTop="170dp"
-        android:textColor="#000000"
         android:layout_centerHorizontal="true"
-        android:padding="5dp"/>
+        android:layout_marginTop="170dp"
+        android:padding="5dp"
+        android:text="Brian Odida"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
     <TextView
         android:id="@+id/textViewEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="bryodiiidah@gmail.com"
-        android:textSize="20sp"
-        android:layout_marginTop="190dp"
-        android:textColor="#000000"
         android:layout_centerHorizontal="true"
-        android:padding="5dp"/>
+        android:layout_marginTop="190dp"
+        android:padding="5dp"
+        android:text="bryodiiidah@gmail.com"
+        android:textColor="#000000"
+        android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/textViewSkillsTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Your Skills"
-            android:textSize="17sp"
-            android:layout_marginTop="230dp"
-            android:textColor="#000000"
-            android:background="@drawable/card_background"
-            android:layout_marginLeft="15dp"
-            android:padding="5dp"/>
-
+    <TextView
+        android:id="@+id/textViewSkillsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="230dp"
+        android:background="@drawable/card_background"
+        android:padding="5dp"
+        android:text="Your Skills"
+        android:textColor="#000000"
+        android:textSize="17sp" />
 
 
     <GridView
+        android:id="@+id/skillsGridView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="320sp"
         android:columnWidth="140sp"
+        android:gravity="center"
         android:numColumns="auto_fit"
-        android:stretchMode="spacingWidthUniform"
-        android:id="@+id/skillsGridView"
         android:padding="0dp"
+        android:scrollingCache="false"
+        android:stretchMode="spacingWidthUniform"
+        android:visibility="gone"></GridView>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Skills"
         android:gravity="center"
         android:layout_centerHorizontal="true"
-        android:scrollingCache="false"
-        android:layout_marginTop="320sp" >
-    </GridView>
+        android:layout_marginTop="320dp"
+        android:background="@color/colorPrimary"
+        android:id="@+id/skillsPopUp"/>
 
     <TextView
         android:id="@+id/textViewSkillsDescriptionTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Profile Description"
-        android:textSize="17sp"
-        android:layout_marginTop="400dp"
-        android:textColor="#000000"
-        android:background="@drawable/card_background"
         android:layout_marginLeft="15dp"
-        android:padding="5dp"/>
+        android:layout_marginTop="400dp"
+        android:background="@drawable/card_background"
+        android:padding="5dp"
+        android:text="Profile Description"
+        android:textColor="#000000"
+        android:textSize="17sp" />
 
     <TextView
         android:id="@+id/textViewSkillsDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/definition"
-        android:textSize="17sp"
-        android:layout_marginTop="435dp"
-        android:textColor="#000000"
         android:layout_centerHorizontal="true"
-        android:padding="5dp"
         android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"/>
+        android:layout_marginTop="435dp"
+        android:layout_marginRight="5dp"
+        android:padding="5dp"
+        android:text="@string/definition"
+        android:textColor="#000000"
+        android:textSize="17sp" />
 
 
     <Button
+        android:id="@+id/action_logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sign Out"
-        android:id="@+id/action_logout"
-        android:textColor="#ffffff"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"/>
+        android:background="@color/colorPrimary"
+        android:text="Sign Out"
+        android:textColor="#ffffff" />
 
 
 </RelativeLayout>
