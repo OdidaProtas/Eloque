@@ -18,6 +18,7 @@ import com.moringaschool.eloque.dictionary_api.api.OxfordApi;
 import com.moringaschool.eloque.dictionary_api.api.OxfordApiClient;
 import com.moringaschool.eloque.dictionary_api.dictionary.OxfordSearchResponse;
 import com.moringaschool.eloque.dictionary_api.dictionary.Result;
+import com.moringaschool.eloque.models.Constants;
 
 import java.io.IOException;
 

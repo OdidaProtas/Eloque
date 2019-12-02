@@ -1,4 +1,4 @@
-package com.moringaschool.eloque;
+package com.moringaschool.eloque.User_Interface;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -15,6 +15,11 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.moringaschool.eloque.fragments.ChatFragment;
+import com.moringaschool.eloque.DictionaryFragment;
+import com.moringaschool.eloque.fragments.HomeFragment;
+import com.moringaschool.eloque.R;
+import com.moringaschool.eloque.fragments.WalletFragment;
 
 
 public class MainActivity extends AppCompatActivity {

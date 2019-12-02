@@ -1,4 +1,4 @@
-package com.moringaschool.eloque;
+package com.moringaschool.eloque.models;
 
 public class Message {
 

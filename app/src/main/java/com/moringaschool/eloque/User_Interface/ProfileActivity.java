@@ -1,4 +1,4 @@
-package com.moringaschool.eloque;
+package com.moringaschool.eloque.User_Interface;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -31,6 +31,9 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.moringaschool.eloque.R;
+import com.moringaschool.eloque.adapters.SkillsAdapter;
+import com.moringaschool.eloque.adapters.SkillsCheckBoxAdapter;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.moringaschool.eloque;
+package com.moringaschool.eloque.User_Interface;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -20,6 +20,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.moringaschool.eloque.models.Constants;
+import com.moringaschool.eloque.R;
 import com.moringaschool.eloque.models.Projects;
 
 import java.util.ArrayList;

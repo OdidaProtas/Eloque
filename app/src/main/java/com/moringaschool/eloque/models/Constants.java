@@ -1,4 +1,6 @@
-package com.moringaschool.eloque;
+package com.moringaschool.eloque.models;
+
+import com.moringaschool.eloque.BuildConfig;
 
 public class Constants {
     public static final String OXFORD_BASE_URL = "https://od-api.oxforddictionaries.com/api/v2/";

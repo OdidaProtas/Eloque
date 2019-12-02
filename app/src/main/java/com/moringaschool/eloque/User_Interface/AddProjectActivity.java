@@ -1,40 +1,43 @@
-package com.moringaschool.eloque;
+package com.moringaschool.eloque.User_Interface;
 
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.moringaschool.eloque.R;
+import com.moringaschool.eloque.adapters.FirebaseProjectListAdapter;
+import com.moringaschool.eloque.interfaces.OnStartDragListener;
+import com.moringaschool.eloque.models.Constants;
 import com.moringaschool.eloque.models.Projects;
 
-public class AddProjectActivity extends AppCompatActivity {
+public class AddProjectActivity extends AppCompatActivity implements OnStartDragListener {
     private String title;
     private FloatingActionButton openNewProjectForm;
     private FirebaseUser user;
     private DatabaseReference mProjectsReference;
-    private FirebaseRecyclerAdapter<Projects, FirebaseProjectViewHolder> mFirebaseAdapter;
+    private FirebaseProjectListAdapter mFirebaseAdapter;
     private RecyclerView mRecyclerview;
     private ProgressBar loadingBar;
+    private ItemTouchHelper mItemTouchHelper;
+
 
 
 
@@ -51,6 +54,7 @@ public class AddProjectActivity extends AppCompatActivity {
         user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = user.getUid();
         String category = getIntent().getStringExtra("category");
+
 
         mProjectsReference = FirebaseDatabase.getInstance()
                 .getReference(Constants.FIREBASE_CHILD_ADDED_PROJECT)
@@ -92,23 +96,14 @@ public class AddProjectActivity extends AppCompatActivity {
                 .setQuery(mProjectsReference, Projects.class)
                 .build();
 
-        mFirebaseAdapter = new FirebaseRecyclerAdapter<Projects, FirebaseProjectViewHolder>(options) {
-            @Override
-            protected void onBindViewHolder(@NonNull FirebaseProjectViewHolder firebaseProjectViewHolder, int i, @NonNull Projects projects) {
-                firebaseProjectViewHolder.bindProjects(projects);
-                loadingBar.setVisibility(View.GONE);
-            }
-
-            @NonNull
-            @Override
-            public FirebaseProjectViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.projects_list_items, parent, false);
-                return new FirebaseProjectViewHolder(view);
-            }
-        };
-
+        mFirebaseAdapter = new FirebaseProjectListAdapter(options, mProjectsReference, this, this);
         mRecyclerview.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerview.setAdapter(mFirebaseAdapter);
+        mRecyclerview.setHasFixedSize(true);
+        ItemTouchHelper.Callback callback = new SimpleItemTouchCallBack(mFirebaseAdapter);
+        mItemTouchHelper =new ItemTouchHelper(callback);
+        mItemTouchHelper.attachToRecyclerView(mRecyclerview);
+
 
         };
 
@@ -116,16 +111,22 @@ public class AddProjectActivity extends AppCompatActivity {
     protected void onStart(){
         super.onStart();
         mFirebaseAdapter.startListening();
+        loadingBar.setVisibility(View.GONE);
     }
     @Override
     protected  void onStop(){
         super.onStop();
         if (mFirebaseAdapter != null){
             mFirebaseAdapter.stopListening();
+
         }
     }
 
 
+    @Override
+    public void onStartDrag(RecyclerView.ViewHolder viewHolder) {
+
+    }
 }
 
 

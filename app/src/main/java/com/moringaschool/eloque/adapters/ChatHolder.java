@@ -1,10 +1,13 @@
-package com.moringaschool.eloque;
+package com.moringaschool.eloque.adapters;
 
 import android.content.Context;
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.moringaschool.eloque.R;
+import com.moringaschool.eloque.models.ChatMessage;
 
 public class ChatHolder extends RecyclerView.ViewHolder {
 

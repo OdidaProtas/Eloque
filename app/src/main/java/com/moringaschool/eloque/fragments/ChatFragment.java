@@ -1,4 +1,4 @@
-package com.moringaschool.eloque;
+package com.moringaschool.eloque.fragments;
 
 
 import android.os.Bundle;
@@ -11,6 +11,9 @@ import androidx.fragment.app.Fragment;
 
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.moringaschool.eloque.models.ChatMessage;
+import com.moringaschool.eloque.models.MemberData;
+import com.moringaschool.eloque.R;
 import com.scaledrone.lib.Listener;
 import com.scaledrone.lib.Message;
 import com.scaledrone.lib.Room;

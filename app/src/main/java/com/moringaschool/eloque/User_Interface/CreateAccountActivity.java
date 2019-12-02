@@ -1,4 +1,4 @@
-package com.moringaschool.eloque;
+package com.moringaschool.eloque.User_Interface;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -26,6 +26,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.moringaschool.eloque.R;
+import com.moringaschool.eloque.models.Users;
 
 public class CreateAccountActivity extends AppCompatActivity implements View.OnClickListener {
     private Button mCreateUserButton;

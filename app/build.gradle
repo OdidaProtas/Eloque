@@ -78,5 +78,10 @@ dependencies {
     implementation 'com.scaledrone:scaledrone-java:0.6.0'
     implementation 'com.androidstudy:daraja:1.0.2'
     implementation 'com.github.florent37:materialtextfield:1.0.7'
+    implementation 'com.androidstudy:daraja:1.0.2'
+    implementation 'com.google.firebase:firebase-storage:17.0.0'
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
+
 }
 apply plugin: 'com.google.gms.google-services'

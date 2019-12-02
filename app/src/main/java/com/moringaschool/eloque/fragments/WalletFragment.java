@@ -1,4 +1,4 @@
-package com.moringaschool.eloque;
+package com.moringaschool.eloque.fragments;
 
 
 import android.app.Activity;
@@ -13,6 +13,8 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
 import com.google.firebase.database.FirebaseDatabase;
+import com.moringaschool.eloque.R;
+import com.moringaschool.eloque.adapters.PopUAdapter;
 
 
 /**

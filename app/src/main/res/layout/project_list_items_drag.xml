@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".User_Interface.ProjectDetailActivity">
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="30dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
         <FrameLayout
@@ -18,16 +18,17 @@
 
 
             <TextView
-                android:id="@+id/detailLevel"
+                android:id="@+id/minimumLevel"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
                 android:layout_marginLeft="5dp"
-                android:textAlignment="center"
                 android:background="@drawable/card_background"
                 android:padding="3dp"
                 android:text="Beginner"
-                android:textSize="10dp"
-                android:layout_marginTop="20dp"/>
+                android:textAlignment="center"
+                android:textSize="10dp" />
 
         </FrameLayout>
 
@@ -48,7 +49,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"
-                android:background="@drawable/gradient_purple"/>
+                android:background="@drawable/gradient_purple" />
 
 
 
@@ -62,8 +63,20 @@
             android:layout_marginTop="8dp"
             android:orientation="vertical">
 
+
             <TextView
-                android:id="@+id/detailCategory"
+                android:id="@+id/projectNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Project Name"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/category"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -71,22 +84,13 @@
                 android:text="Academic" />
 
             <TextView
-                android:id="@+id/detailProjectOwner"
+                android:id="@+id/projecOwner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:text="By: Brian Odida"
                 android:textSize="10dp"
-                android:textStyle="italic"/>
-
-            <TextView
-                android:id="@+id/detailProjectOwnerEmail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="By: Brian Odida"
-                android:textSize="10dp"
-                android:textStyle="italic"/>
+                android:textStyle="italic" />
 
         </LinearLayout>
 
@@ -101,7 +105,7 @@
 
 
         <TextView
-            android:id="@+id/detailProjectPrice"
+            android:id="@+id/projectPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
@@ -110,6 +114,15 @@
             android:text="Kes: 300"
             android:textColor="#008000"
             android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/dragIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:gravity="bottom|left"
+            android:src="@drawable/reorder"
+            android:layout_marginLeft="15dp"
+            android:tint="@color/colorPrimary"/>
 
     </FrameLayout>
 
@@ -120,62 +133,6 @@
         android:layout_marginTop="85dp"
         android:layout_marginRight="18dp"
         android:background="@android:color/darker_gray" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Description"
-        android:layout_marginTop="100dp"
-        android:background="@drawable/card_background"
-        android:padding="5dp"
-        android:layout_marginLeft="10dp"
-        android:textSize="15sp"/>
-
-    <TextView
-        android:id="@+id/descriptionView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/definition"
-        android:layout_marginTop="150dp"
-        android:padding="5dp"
-        android:layout_marginLeft="10dp"
-        android:textSize="15sp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Requirements"
-        android:layout_marginTop="300dp"
-        android:background="@drawable/card_background"
-        android:padding="5dp"
-        android:layout_marginLeft="10dp"
-        android:textSize="15sp"/>
-
-    <TextView
-        android:id="@+id/requirementsView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/definition"
-        android:layout_marginTop="350dp"
-        android:padding="5dp"
-        android:layout_marginLeft="10dp"
-        android:textSize="15sp"/>
-    <Button
-        android:id="@+id/save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="460dp"
-        android:layout_centerHorizontal="true"
-        android:text="save"
-        android:background="@color/colorPrimary"/>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:text="Attempt Project"
-        android:background="@color/colorPrimary"
-        android:id="@+id/attemptProject"/>
 
 
 </RelativeLayout>

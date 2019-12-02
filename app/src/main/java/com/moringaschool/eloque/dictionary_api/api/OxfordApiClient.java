@@ -2,7 +2,7 @@ package com.moringaschool.eloque.dictionary_api.api;
 
 import androidx.annotation.NonNull;
 
-import com.moringaschool.eloque.Constants;
+import com.moringaschool.eloque.models.Constants;
 
 import java.io.IOException;
 
@@ -13,7 +13,7 @@ import okhttp3.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static com.moringaschool.eloque.Constants.APP_ID;
+import static com.moringaschool.eloque.models.Constants.APP_ID;
 
 public class OxfordApiClient {
     private static  OxfordApiClient oxfordApiClient;

@@ -15,21 +15,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AttemptProjectActivity"></activity>
-        <activity android:name=".ProjectDetailActivity" />
-        <activity android:name=".LOginActivity">
+        <activity android:name=".User_Interface.AttemptProjectActivity"></activity>
+        <activity android:name=".User_Interface.ProjectDetailActivity" />
+        <activity android:name=".User_Interface.LOginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CreateAccountActivity" />
-        <activity android:name=".ProjectsFormActivity" />
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".AddProjectActivity" />
+        <activity android:name=".User_Interface.CreateAccountActivity" />
+        <activity android:name=".User_Interface.ProjectsFormActivity" />
+        <activity android:name=".User_Interface.ProfileActivity" />
+        <activity android:name=".User_Interface.AddProjectActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".User_Interface.MainActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
     </application>

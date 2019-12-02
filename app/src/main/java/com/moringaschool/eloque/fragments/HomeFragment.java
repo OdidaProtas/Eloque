@@ -1,4 +1,4 @@
-package com.moringaschool.eloque;
+package com.moringaschool.eloque.fragments;
 
 
 import android.content.Intent;
@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
+import com.moringaschool.eloque.R;
 import com.moringaschool.eloque.User_Interface.AddProjectActivity;
 import com.moringaschool.eloque.User_Interface.ProfileActivity;
 

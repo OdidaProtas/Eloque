@@ -1,8 +1,9 @@
-package com.moringaschool.eloque;
+package com.moringaschool.eloque.adapters;
 
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.moringaschool.eloque.models.Constants;
+import com.moringaschool.eloque.R;
 import com.moringaschool.eloque.User_Interface.ProjectDetailActivity;
 import com.moringaschool.eloque.models.Projects;
 
@@ -28,6 +31,8 @@ public class FirebaseProjectViewHolder extends RecyclerView.ViewHolder implement
     View mView;
     Context mContext;
     private String category;
+
+    public ImageView mRestaurantImageView;
 
     public FirebaseProjectViewHolder(View itemView){
         super(itemView);
@@ -43,6 +48,7 @@ public class FirebaseProjectViewHolder extends RecyclerView.ViewHolder implement
         TextView projectOwner = mView.findViewById(R.id.projecOwner);
         TextView minimumLevel = mView.findViewById(R.id.minimumLevel);
         TextView projectPrice = mView.findViewById(R.id.projectPrice);
+        mRestaurantImageView = mView.findViewById(R.id.dragIcon);
         category = project.getCategory();
 
 

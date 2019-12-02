@@ -1,4 +1,4 @@
-package com.moringaschool.eloque;
+package com.moringaschool.eloque.User_Interface;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -17,6 +17,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.FirebaseDatabase;
+import com.moringaschool.eloque.R;
 import com.moringaschool.eloque.models.Projects;
 
 import org.parceler.Parcels;
