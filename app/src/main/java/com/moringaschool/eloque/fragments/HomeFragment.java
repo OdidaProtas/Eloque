@@ -63,6 +63,7 @@ public class HomeFragment extends Fragment {
                 Intent intent = new Intent(getContext(), AddProjectActivity.class);
                 intent.putExtra("title", "Projects");
                 intent.putExtra("category", "Academic");
+                intent.putExtra("isSaved",  false);
                 startActivity(intent);
             }
         });
@@ -74,6 +75,7 @@ public class HomeFragment extends Fragment {
                 Intent intent = new Intent(getContext(), AddProjectActivity.class);
                 intent.putExtra("title", "Research Projects");
                 intent.putExtra("category", "Research");
+                intent.putExtra("isSaved",  false);
                 startActivity(intent);
             }
         });
@@ -84,6 +86,7 @@ public class HomeFragment extends Fragment {
                 Intent intent = new Intent(getContext(), AddProjectActivity.class);
                 intent.putExtra("title", "Articles Projects");
                 intent.putExtra("category", "Article");
+                intent.putExtra("isSaved",  false);
                 startActivity(intent);
             }
         });
@@ -94,6 +97,7 @@ public class HomeFragment extends Fragment {
                 Intent intent = new Intent(getContext(), AddProjectActivity.class);
                 intent.putExtra("title", "  WordPress Projects");
                 intent.putExtra("category", "Wordpress");
+                intent.putExtra("isSaved",  false);
                 startActivity(intent);
             }
         });
@@ -104,6 +108,7 @@ public class HomeFragment extends Fragment {
                 Intent intent = new Intent(getContext(), AddProjectActivity.class);
                 intent.putExtra("title", "Images Projects");
                 intent.putExtra("category", "Image");
+                intent.putExtra("isSaved",  false);
                 startActivity(intent);
             }
         });
@@ -114,6 +119,7 @@ public class HomeFragment extends Fragment {
                 Intent intent = new Intent(getContext(), AddProjectActivity.class);
                 intent.putExtra("title", " Saved Academic Projects");
                 intent.putExtra("category", "saved Academic "  + FirebaseAuth.getInstance().getUid());
+                intent.putExtra("isSaved",  true);
                 startActivity(intent);
             }
         });
@@ -124,6 +130,7 @@ public class HomeFragment extends Fragment {
                 Intent intent = new Intent(getContext(), AddProjectActivity.class);
                 intent.putExtra("title", "Saved Research Projects");
                 intent.putExtra("category", "saved Research "  + FirebaseAuth.getInstance().getUid());
+                intent.putExtra("isSaved",  true);
                 startActivity(intent);
             }
         });
@@ -134,6 +141,7 @@ public class HomeFragment extends Fragment {
                 Intent intent = new Intent(getContext(), AddProjectActivity.class);
                 intent.putExtra("title", "  Saved Articles Projects");
                 intent.putExtra("category", "saved Article "  + FirebaseAuth.getInstance().getUid());
+                intent.putExtra("isSaved",  true);
                 startActivity(intent);
             }
         });
@@ -144,6 +152,7 @@ public class HomeFragment extends Fragment {
                 Intent intent = new Intent(getContext(), AddProjectActivity.class);
                 intent.putExtra("title", "Saved WordPress Projects");
                 intent.putExtra("category", "saved Wordpress "  + FirebaseAuth.getInstance().getUid());
+                intent.putExtra("isSaved",  true);
                 startActivity(intent);
             }
         });
@@ -154,6 +163,7 @@ public class HomeFragment extends Fragment {
                 Intent intent = new Intent(getContext(), AddProjectActivity.class);
                 intent.putExtra("title", "Saved Images Projects");
                 intent.putExtra("category", "saved Image "  + FirebaseAuth.getInstance().getUid());
+                intent.putExtra("isSaved",  true);
                 startActivity(intent);
             }
         });

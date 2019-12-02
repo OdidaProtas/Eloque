@@ -5,17 +5,21 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,6 +28,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.moringaschool.eloque.R;
 import com.moringaschool.eloque.adapters.FirebaseProjectListAdapter;
+import com.moringaschool.eloque.adapters.FirebaseProjectViewHolder;
 import com.moringaschool.eloque.interfaces.OnStartDragListener;
 import com.moringaschool.eloque.models.Constants;
 import com.moringaschool.eloque.models.Projects;
@@ -34,9 +39,12 @@ public class AddProjectActivity extends AppCompatActivity implements OnStartDrag
     private FirebaseUser user;
     private DatabaseReference mProjectsReference;
     private FirebaseProjectListAdapter mFirebaseAdapter;
+    private FirebaseRecyclerAdapter<Projects, FirebaseProjectViewHolder> firebaseAdapter;
     private RecyclerView mRecyclerview;
     private ProgressBar loadingBar;
     private ItemTouchHelper mItemTouchHelper;
+
+    private boolean isSaved;
 
 
 
@@ -49,6 +57,7 @@ public class AddProjectActivity extends AppCompatActivity implements OnStartDrag
         loadingBar = findViewById(R.id.projectsInfoView);
 
         title = getIntent().getStringExtra("title");
+        isSaved = getIntent().getBooleanExtra("isSaved", false);
 
 
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -56,11 +65,16 @@ public class AddProjectActivity extends AppCompatActivity implements OnStartDrag
         String category = getIntent().getStringExtra("category");
 
 
+
         mProjectsReference = FirebaseDatabase.getInstance()
                 .getReference(Constants.FIREBASE_CHILD_ADDED_PROJECT)
                 .child(category);
 
-        setUpFirebaseAdapter();
+        if (isSaved) {
+            setUpFirebaseAdapter();
+        }else{
+            setUpSavedAdapter();
+        }
 
         ActionBar bar = getSupportActionBar();
         if(bar!=null){
@@ -106,11 +120,37 @@ public class AddProjectActivity extends AppCompatActivity implements OnStartDrag
 
 
         };
+    private void setUpSavedAdapter(){
+
+        FirebaseRecyclerOptions<Projects> options =
+                new FirebaseRecyclerOptions.Builder<Projects>()
+                        .setQuery(mProjectsReference, Projects.class)
+                        .build();
+        firebaseAdapter = new FirebaseRecyclerAdapter<Projects, FirebaseProjectViewHolder>(options) {
+            @Override
+            protected void onBindViewHolder(@NonNull FirebaseProjectViewHolder firebaseTeamViewHolder, int position, @NonNull Projects projects) {
+                firebaseTeamViewHolder.bindProjects(projects);
+            }
+            @NonNull
+            @Override
+            public FirebaseProjectViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.projects_list_items, parent, false);
+                return new FirebaseProjectViewHolder(view);
+            }
+        };
+        mRecyclerview.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerview.setAdapter(firebaseAdapter);
+
+    }
 
     @Override
     protected void onStart(){
         super.onStart();
-        mFirebaseAdapter.startListening();
+        if (isSaved) {
+            mFirebaseAdapter.startListening();
+        }else{
+            firebaseAdapter.startListening();
+        }
         loadingBar.setVisibility(View.GONE);
     }
     @Override

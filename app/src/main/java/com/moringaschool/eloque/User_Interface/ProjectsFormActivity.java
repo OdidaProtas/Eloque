@@ -123,6 +123,7 @@ public class ProjectsFormActivity extends AppCompatActivity {
                         Intent intent =  new Intent(getApplicationContext(), AddProjectActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         intent.putExtra("category", category);
+                        intent.putExtra("isSaved",  false);
                         startActivity(intent);
 
                     }catch (NumberFormatException e) {
