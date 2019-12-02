@@ -18,6 +18,7 @@ public class Projects {
     String postedbyEmail;
     String pushId;
     String color;
+    String index;
 
     ArrayList<Projects> allProjects = new ArrayList<Projects>();
 
@@ -36,6 +37,7 @@ public class Projects {
         this.postedByName = postedByName;
         this.postedbyEmail = postedByEmail;
         allProjects.add(this);
+        this.index = "not_specified";
     }
 
 
@@ -125,5 +127,12 @@ public class Projects {
 
     public void setColor(String color) {
         this.color = color;
+    }
+    public String getIndex() {
+        return index;
+    }
+
+    public void setIndex(String index) {
+        this.index = index;
     }
 }

@@ -26,6 +26,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.moringaschool.eloque.R;
 import com.moringaschool.eloque.adapters.FirebaseProjectListAdapter;
 import com.moringaschool.eloque.adapters.FirebaseProjectViewHolder;
@@ -38,6 +39,7 @@ public class AddProjectActivity extends AppCompatActivity implements OnStartDrag
     private FloatingActionButton openNewProjectForm;
     private FirebaseUser user;
     private DatabaseReference mProjectsReference;
+    private Query query;
     private FirebaseProjectListAdapter mFirebaseAdapter;
     private FirebaseRecyclerAdapter<Projects, FirebaseProjectViewHolder> firebaseAdapter;
     private RecyclerView mRecyclerview;
@@ -69,6 +71,13 @@ public class AddProjectActivity extends AppCompatActivity implements OnStartDrag
         mProjectsReference = FirebaseDatabase.getInstance()
                 .getReference(Constants.FIREBASE_CHILD_ADDED_PROJECT)
                 .child(category);
+
+        query = FirebaseDatabase.getInstance()
+                .getReference(Constants.FIREBASE_CHILD_ADDED_PROJECT)
+                .child(category)
+                .orderByChild(Constants.FIREBASE_QUERY_INDEX);
+
+
 
         if (isSaved) {
             setUpFirebaseAdapter();
@@ -107,10 +116,10 @@ public class AddProjectActivity extends AppCompatActivity implements OnStartDrag
         Toast.makeText(getApplicationContext(), "Looking for Available Projects", Toast.LENGTH_LONG).show();
         FirebaseRecyclerOptions<Projects> options = new FirebaseRecyclerOptions
                 .Builder<Projects>()
-                .setQuery(mProjectsReference, Projects.class)
+                .setQuery(query, Projects.class)
                 .build();
 
-        mFirebaseAdapter = new FirebaseProjectListAdapter(options, mProjectsReference, this, this);
+        mFirebaseAdapter = new FirebaseProjectListAdapter(options, query, this, this);
         mRecyclerview.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerview.setAdapter(mFirebaseAdapter);
         mRecyclerview.setHasFixedSize(true);
@@ -161,6 +170,18 @@ public class AddProjectActivity extends AppCompatActivity implements OnStartDrag
 
         }
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (isSaved){
+        mFirebaseAdapter.stopListening();
+        }else {
+            firebaseAdapter.stopListening();
+        }
+
+    }
+
 
 
     @Override

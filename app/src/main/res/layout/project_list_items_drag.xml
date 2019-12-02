@@ -122,7 +122,9 @@
             android:gravity="bottom|left"
             android:src="@drawable/reorder"
             android:layout_marginLeft="15dp"
-            android:tint="@color/colorPrimary"/>
+            android:tint="@color/colorPrimary"
+           android:clickable="true"
+            android:focusable="true"/>
 
     </FrameLayout>
 
