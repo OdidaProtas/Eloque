@@ -97,6 +97,7 @@ public class PopUAdapter extends DialogFragment {
                 FirebaseAuth.getInstance().getUid(),
                 "Goods Payment"
         );
+
         daraja.requestMPESAExpress(lnmExpress,
                 new DarajaListener<LNMResult>() {
                     @Override
