@@ -11,4 +11,7 @@ public class Constants {
     public static final String STORAGE_PATH_UPLOADS = "uploads/";
     public static final String DATABASE_PATH_UPLOADS = "uploads";
     public static  final String FIREBASE_QUERY_INDEX = "index";
+    public static final String SAFARICOM_CONSUMER_KEY = BuildConfig.SafaricomConsumerKey;
+    public static final String  SAFARICOM_SECRET_KEY = BuildConfig.SafaricomSecretKey;
+    public static  final String SAFARICOM_PASS_KEY =BuildConfig.SafaricomPassKey;
 }

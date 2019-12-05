@@ -22,6 +22,7 @@ import com.androidstudy.daraja.model.LNMResult;
 import com.androidstudy.daraja.util.TransactionType;
 import com.google.firebase.auth.FirebaseAuth;
 import com.moringaschool.eloque.R;
+import com.moringaschool.eloque.models.Constants;
 
 public class PopUAdapter extends DialogFragment {
     public Button mSubmitButton;
@@ -51,7 +52,7 @@ public class PopUAdapter extends DialogFragment {
             }
         });
 
-        daraja = Daraja.with("MeJ9x2E6gAUAuwiAcbGePtSulMBdxQid", "G5nHEAfqrnEogzNL", new DarajaListener<AccessToken>() {
+        daraja = Daraja.with(Constants.SAFARICOM_CONSUMER_KEY, Constants.SAFARICOM_SECRET_KEY, new DarajaListener<AccessToken>() {
             @Override
             public void onResult(@NonNull AccessToken accessToken) {
                 Log.i(getActivity().getClass().getSimpleName(), accessToken.getAccess_token());
@@ -87,7 +88,7 @@ public class PopUAdapter extends DialogFragment {
 
         LNMExpress lnmExpress = new LNMExpress(
                 "174379",
-                "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919",  //https://developer.safaricom.co.ke/test_credentials
+                Constants.SAFARICOM_PASS_KEY,  //https://developer.safaricom.co.ke/test_credentials
                 TransactionType.CustomerPayBillOnline,
                 amount,
                 "254708374149",
