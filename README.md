@@ -1,7 +1,12 @@
 # Eloque
 
+
 ## About Eloque
 * Eloque is a Android based Mobile Application that lets its users post and get to do freelance writing and other Skills like Photoshop. It is ideal for people who needs aricles written, review,research and academic work. Eloque offers a flevible payment Option for it Clients too and offers a more localised writing experience.
+
+<img src="screenshots/home.jpg" height="300px">
+<img src="screenshots/projects.jpg" height="300px">
+<img src="screenshots/saved-projects.jpg" height="300px">
 
 ## Author
  Brian Protas Odida.
